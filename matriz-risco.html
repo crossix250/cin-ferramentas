@@ -1,0 +1,1168 @@
+<!doctype html>
+<html lang="pt-PT">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>CIN - Matriz de Risco de Cliente</title>
+<link rel="icon" type="image/png" href="data:image/png;base64,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">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy:#1b2a5e; --navy-soft:#2f3f78; --red:#d4202a;
+    --ink:#1c2230; --muted:#5a6480; --line:rgba(27,42,94,.14);
+    --glass:rgba(255,255,255,.55); --glass-strong:rgba(255,255,255,.78);
+    --ok:#1f9d6b; --warn:#c8881a; --info:#2f6fd4; --done:#6b7280;
+    --radius:18px; --shadow:0 10px 40px rgba(27,42,94,.12);
+    --risk-low:var(--ok); --risk-mid:var(--warn); --risk-high:var(--red);
+  }
+  *{box-sizing:border-box;}
+  html,body{margin:0;height:100%;}
+  body{
+    font-family:"Poppins",system-ui,Arial,sans-serif;
+    color:var(--ink);
+    min-height:100%;
+    background:
+      radial-gradient(1100px 700px at 12% -5%, #dfe7ff 0%, transparent 55%),
+      radial-gradient(900px 600px at 100% 0%, #ffe2e4 0%, transparent 50%),
+      radial-gradient(800px 800px at 50% 120%, #e4ecff 0%, transparent 55%),
+      linear-gradient(135deg,#eef2fb 0%,#f6f8fd 100%);
+    background-attachment:fixed;
+    -webkit-font-smoothing:antialiased;
+  }
+  button,input,textarea,select{font-family:inherit;}
+  button{cursor:pointer;}
+
+  .shell{display:flex;flex-direction:column;min-height:100vh;}
+
+  /* Topbar */
+  .topbar{
+    display:flex;align-items:center;gap:12px;flex-wrap:wrap;
+    background:var(--glass-strong);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);
+    border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);
+    margin:14px 14px 0;padding:12px 16px;position:sticky;top:14px;z-index:20;
+  }
+  .topbar-brand{display:flex;align-items:center;gap:9px;}
+  .brand-logo-img{height:28px;width:auto;display:block;}
+  .sidebar-brand{font-size:9px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);}
+  .sidebar-title{font-size:13px;font-weight:700;margin-top:1px;color:var(--navy);}
+  .topbar-spacer{flex:1;}
+  .client-select{
+    border:1px solid var(--line);border-radius:10px;padding:9px 12px;font-size:13px;font-weight:600;
+    color:var(--navy);background:#fff;min-width:220px;max-width:340px;
+  }
+  .client-select:focus{outline:none;border-color:var(--red);}
+
+  /* Main */
+  .main{flex:1;padding:20px 40px 60px;max-width:1320px;margin:0 auto;width:100%;}
+  .btn-primary{background:var(--red);color:#fff;border:none;border-radius:10px;padding:10px 18px;font-weight:600;font-size:13.5px;box-shadow:0 6px 16px rgba(212,32,42,.28);}
+  .btn-primary:hover{background:#b81c25;}
+  .btn-secondary{background:var(--glass);color:var(--navy);border:1px solid var(--line);border-radius:10px;padding:9px 16px;font-size:13px;font-weight:600;}
+  .btn-secondary:hover{background:#fff;}
+  .btn-ghost{background:transparent;border:none;color:var(--muted);font-size:12.5px;padding:5px 6px;}
+  .btn-ghost:hover{color:var(--red);}
+
+  .client-header{
+    margin-bottom:22px;background:var(--glass-strong);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);
+    border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);padding:20px 22px;
+  }
+  .client-name-input{font-size:24px;font-weight:700;border:none;background:transparent;color:var(--navy);padding:2px 0;width:100%;}
+  .client-name-input:focus{outline:none;border-bottom:2px solid var(--red);}
+  .client-meta{display:flex;gap:22px;margin-top:10px;flex-wrap:wrap;}
+  .client-meta-field{display:flex;flex-direction:column;gap:3px;}
+  .client-meta-field label{font-size:10.5px;text-transform:uppercase;letter-spacing:.05em;color:var(--muted);font-weight:600;}
+  .client-meta-field input{border:none;border-bottom:1px solid var(--line);background:transparent;font-size:13px;padding:3px 0;min-width:150px;color:var(--ink);}
+  .client-meta-field input:focus{outline:none;border-bottom-color:var(--red);}
+
+  .section-title{font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--navy);margin:28px 0 12px;display:flex;justify-content:space-between;align-items:center;}
+
+  #risk-list{display:grid;grid-template-columns:1fr;gap:12px;}
+  .risk-card{
+    display:flex;background:var(--glass-strong);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);
+    border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow);
+  }
+  .risk-heat{width:7px;flex-shrink:0;}
+  .risk-body{flex:1;padding:14px 18px;}
+  .risk-row-top{display:flex;justify-content:space-between;align-items:flex-start;gap:10px;}
+  .risk-title-input{font-weight:700;font-size:14.5px;border:none;background:transparent;flex:1;padding:2px 0;color:var(--navy);}
+  .risk-title-input:focus{outline:none;border-bottom:1px solid var(--red);}
+  .risk-score-wrap{display:flex;flex-direction:row;align-items:center;gap:8px;}
+  .risk-score-label{font-weight:800;font-size:15.5px;text-transform:uppercase;letter-spacing:.03em;color:var(--navy);white-space:nowrap;}
+  .risk-score{font-weight:800;font-size:17px;padding:3px 10px;border-radius:8px;white-space:nowrap;}
+  .risk-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:9px 18px;margin-top:10px;}
+  .risk-grid-full{grid-column:1/-1;}
+  .risk-field label{font-size:10.5px;text-transform:uppercase;letter-spacing:.04em;color:var(--muted);font-weight:600;display:flex;justify-content:space-between;margin-bottom:3px;}
+  .char-counter{font-weight:600;text-transform:none;letter-spacing:0;color:var(--muted);}
+  .risk-field input,.risk-field textarea,.risk-field select{width:100%;border:1px solid var(--line);border-radius:8px;padding:6px 8px;font-size:12.5px;resize:vertical;background:rgba(255,255,255,.6);color:var(--ink);}
+  .risk-field select{background:#fff;}
+  .risk-field input:focus,.risk-field textarea:focus,.risk-field select:focus{outline:none;border-color:var(--red);background:#fff;}
+  .risk-sliders{display:flex;gap:18px;margin-top:2px;}
+  .risk-slider{flex:1;}
+  .risk-slider-label{font-size:10.5px;text-transform:uppercase;color:var(--muted);font-weight:600;}
+  .risk-slider-value{font-weight:800;font-size:12.5px;color:var(--navy);}
+  .risk-footer{display:flex;justify-content:space-between;align-items:center;margin-top:10px;padding-top:9px;border-top:1px dashed var(--line);}
+  .add-risk-btn{background:var(--glass);border:1.5px dashed var(--line);border-radius:var(--radius);padding:11px;width:100%;color:var(--navy);font-weight:700;font-size:13px;}
+  .add-risk-btn:hover{background:#fff;}
+
+  .yearly-table-wrap{
+    background:var(--glass-strong);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);
+    border:1px solid var(--line);border-radius:var(--radius);overflow-x:auto;box-shadow:var(--shadow);
+  }
+  table.yearly-table{width:100%;border-collapse:collapse;font-size:12.5px;}
+  table.yearly-table th,table.yearly-table td{padding:9px 11px;border-bottom:1px solid var(--line);text-align:left;white-space:nowrap;}
+  table.yearly-table th:first-child,table.yearly-table td:first-child{position:sticky;left:0;background:var(--glass-strong);font-weight:700;color:var(--muted);font-size:11px;text-transform:uppercase;}
+  table.yearly-table thead th{font-weight:800;color:var(--navy);background:rgba(27,42,94,.06);}
+  .year-header-input{
+    width:64px;border:1px solid transparent;background:transparent;color:var(--navy);
+    font-weight:800;font-size:13px;padding:4px 5px;border-radius:6px;text-align:left;
+  }
+  .year-header-input:hover{border-color:var(--line);}
+  .year-header-input:focus{outline:none;border-color:var(--red);background:#fff;}
+  table.yearly-table input{border:1px solid var(--line);background:#fff;font-size:12px;padding:5px 7px;border-radius:6px;width:120px;color:var(--ink);}
+  table.yearly-table input:hover{border-color:var(--line);}
+  table.yearly-table input:focus{outline:none;border-color:var(--red);background:#fff;}
+
+  .observacoes-box textarea{
+    width:100%;min-height:90px;border:1px solid var(--line);border-radius:var(--radius);padding:14px;font-size:13px;
+    background:var(--glass-strong);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);box-shadow:var(--shadow);color:var(--ink);
+  }
+  .observacoes-box textarea:focus{outline:none;border-color:var(--red);}
+
+  .hint{font-size:11.5px;color:var(--muted);margin-top:6px;}
+
+  /* ---------- PRINT / PDF ---------- */
+  #print-sheet{display:none;}
+
+  @media print{
+    body *{visibility:hidden;}
+    .shell, .topbar{display:none !important;}
+    #print-sheet, #print-sheet *{visibility:visible;}
+    #print-sheet{display:block !important;position:absolute;top:0;left:0;width:100%;padding:0;}
+    @page{margin:14mm;}
+  }
+
+  .ps-header{display:flex;justify-content:space-between;align-items:flex-end;border-bottom:2px solid var(--navy);padding-bottom:10px;margin-bottom:16px;}
+  .ps-logo{display:flex;align-items:center;gap:10px;margin-bottom:6px;}
+  .ps-logo-img{height:26px;width:auto;display:block;}
+  .ps-brand{font-size:9.5px;letter-spacing:.14em;text-transform:uppercase;color:#000;font-weight:400;}
+  .ps-title{font-size:20px;font-weight:800;margin-top:2px;color:#000;}
+  .ps-meta{font-size:10.5px;text-align:right;color:#000;font-weight:400;line-height:1.6;}
+  .ps-section{font-size:11.5px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:#000;margin:18px 0 8px;border-bottom:1px solid var(--line);padding-bottom:4px;}
+  table.ps-table{width:100%;table-layout:fixed;border-collapse:collapse;font-size:10.5px;margin-bottom:6px;}
+  table.ps-table th,table.ps-table td{border:1px solid var(--line);padding:6px 7px;text-align:left;vertical-align:top;color:#000;font-weight:400;word-wrap:break-word;overflow-wrap:anywhere;}
+  table.ps-table th{background:rgba(27,42,94,.07);font-size:9.5px;text-transform:uppercase;letter-spacing:.02em;color:#000;font-weight:400;}
+  table.ps-table td.ps-score{font-weight:400;text-align:center;color:#000;}
+  .ps-obs{border:1px solid var(--line);border-radius:8px;padding:10px;font-size:11px;color:#000;font-weight:400;min-height:50px;white-space:pre-wrap;word-wrap:break-word;overflow-wrap:anywhere;}
+  .ps-footer{margin-top:20px;font-size:9px;color:#000;font-weight:400;text-align:right;}
+</style>
+<script src="https://cdn.jsdelivr.net/npm/exceljs@4.4.0/dist/exceljs.min.js"></script>
+</head>
+<body>
+
+<div class="shell" id="app-shell">
+  <div class="topbar">
+    <div class="topbar-brand">
+      <img class="brand-logo-img" id="topbar-logo" alt="CIN"/>
+      <div>
+        <div class="sidebar-brand">Gestão Comercial</div>
+        <div class="sidebar-title">Matriz de Risco</div>
+      </div>
+    </div>
+
+    <select class="client-select" id="client-select"></select>
+    <button class="btn-secondary" id="add-client-btn">+ Novo cliente</button>
+
+    <div class="topbar-spacer"></div>
+
+    <button class="btn-secondary" id="delete-client-btn">Eliminar cliente</button>
+    <input type="file" id="import-excel-input" accept=".xlsx" style="display:none"/>
+    <button class="btn-secondary" id="import-excel-btn">Importar Excel</button>
+    <button class="btn-secondary" id="export-excel-btn">Exportar Excel</button>
+    <button class="btn-primary" id="generate-pdf-btn">Gerar PDF</button>
+  </div>
+
+  <main class="main">
+    <div id="client-editor"></div>
+  </main>
+</div>
+
+<!-- Folha usada apenas na impressão / geração do PDF -->
+<div id="print-sheet"></div>
+
+<script>
+const STORAGE_KEY = 'cmacedo_matriz_risco_v1';
+const CIN_LOGO = 'data:image/png;base64,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';
+
+const SEED = [];
+
+let state = load();
+normalizeYearlyIds();
+let activeId = state.clients[0]?.id || null;
+
+function normalizeYearlyIds(){
+  state.clients.forEach(c => {
+    (c.yearlyData || []).forEach(y => { if(!y.id) y.id = uid(); });
+  });
+}
+
+function load(){
+  try{
+    const raw = localStorage.getItem(STORAGE_KEY);
+    if(raw) return JSON.parse(raw);
+  }catch(e){}
+  return { clients: JSON.parse(JSON.stringify(SEED)) };
+}
+function save(){ localStorage.setItem(STORAGE_KEY, JSON.stringify(state)); }
+function uid(){ return 'id' + Math.random().toString(36).slice(2,10); }
+function getClient(id){ return state.clients.find(c => c.id === id); }
+function heatColor(score){
+  if(score > 45) return '#D4202A';
+  if(score > 35) return '#E2711D';
+  if(score > 25) return '#C98A2C';
+  return '#1F9D6B';
+}
+function bulletsToText(arr){ return (arr||[]).join('\n'); }
+function textToBullets(t){ return t.split('\n').map(l=>l.trim()).filter(Boolean); }
+function fmtMoney(v){ return (v===null||v===undefined||v==='') ? '—' : Number(v).toLocaleString('pt-PT',{minimumFractionDigits:2,maximumFractionDigits:2}) + ' €'; }
+function fmtPercent(v){ return (v===null||v===undefined||v==='') ? '—' : Math.round(v*100) + '%'; }
+
+const CONCORRENCIA_BRANDS = ['Arga','Barbot','Blatem','Dankal','Dieira','Dissoltin','Divercol','Douro','Dyrup','Europa','Fassa Bartolo','Hempel','Jafep','Kar','Keim','Kenitex','Kerakoll','Mapei','Marilina','Matesica','Monto','Neuce','PPG','Procolor','Robbialac','Secil','Sika','Tintas 2000','Titan','Topeca','TSL','Viero','Weber','Outras'];
+const OWNER_OPTIONS = ['Vendedor/Loja','Chefe de Vendas','Direcção Comercial'];
+const MAX_RISKS = 4;
+
+function riskYearOptions(){
+  const y = new Date().getFullYear();
+  return [y, y+1, y+2, y+3];
+}
+function furthestRiskYear(){
+  const opts = riskYearOptions();
+  return String(opts[opts.length - 1]);
+}
+function formatRiskDate(v){
+  if(/^\d{4}$/.test(String(v||'').trim())) return `31/12/${v}`;
+  return v || '—';
+}
+function calcComprasConcorrencia(compras, percCin){
+  const total = Number(compras);
+  const pct = Number(percCin);
+  if(!Number.isFinite(total) || !Number.isFinite(pct)) return null;
+  return total - (total * pct);
+}
+
+function renderSidebar(){
+  const select = document.getElementById('client-select');
+  select.innerHTML = '';
+  state.clients.forEach(c => {
+    const opt = document.createElement('option');
+    opt.value = c.id;
+    opt.textContent = `${c.nome} · Nº ${c.numero || '—'}`;
+    if(c.id === activeId) opt.selected = true;
+    select.appendChild(opt);
+  });
+}
+
+function escapeHtml(s){
+  return String(s ?? '').replace(/[&<>"']/g, m => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m]));
+}
+
+function renderEditor(){
+  const root = document.getElementById('client-editor');
+  const client = getClient(activeId);
+  if(!client){ root.innerHTML = '<div class="hint">Sem clientes. Cria o primeiro em <b>+ NOVO CLIENTE</b>.</div>'; return; }
+
+  root.innerHTML = `
+    <div class="client-header">
+      <input class="client-name-input" id="f-nome" value="${escapeHtml(client.nome)}" />
+      <div class="client-meta">
+        <div class="client-meta-field"><label>Cliente número</label><input id="f-numero" value="${escapeHtml(client.numero)}"/></div>
+        <div class="client-meta-field"><label>Geografia (sede)</label><input id="f-geografia" value="${escapeHtml(client.geografia)}" style="min-width:260px"/></div>
+      </div>
+    </div>
+
+    <div class="section-title">Matriz de risco</div>
+    <div id="risk-list"></div>
+    <button class="add-risk-btn" id="add-risk-btn">+ Adicionar risco</button>
+    <div class="hint" id="risk-limit-notice" style="display:none">Limite de 4 riscos por cliente atingido.</div>
+
+    <div class="section-title">Compras · Marcas · Lojas · Colaboradores</div>
+    <div class="yearly-table-wrap"><table class="yearly-table" id="yearly-table"></table></div>
+
+    <div class="section-title">Observações</div>
+    <div class="observacoes-box"><textarea id="f-observacoes" placeholder="Notas ou informação relevante...">${escapeHtml(client.observacoes)}</textarea></div>
+  `;
+
+  document.getElementById('f-nome').oninput = e => { client.nome = e.target.value; save(); renderSidebar(); };
+  document.getElementById('f-numero').oninput = e => { client.numero = e.target.value; save(); renderSidebar(); };
+  document.getElementById('f-geografia').oninput = e => { client.geografia = e.target.value; save(); renderSidebar(); };
+  document.getElementById('f-observacoes').oninput = e => { client.observacoes = e.target.value; save(); };
+  document.getElementById('add-risk-btn').onclick = () => {
+    if(client.risks.length >= MAX_RISKS) return;
+    client.risks.push({ id:uid(), titulo:'Novo risco', tipoRisco:'', perigos:'', descricao:'', nivelRisco:3, impactoRisco:3, mitigacao:[], planoContingencia:[], owner:'', data:String(new Date().getFullYear()) });
+    save(); renderRiskList(client);
+  };
+
+  renderRiskList(client);
+  renderYearlyTable(client);
+}
+
+function renderRiskList(client){
+  const wrap = document.getElementById('risk-list');
+  wrap.innerHTML = '';
+  const sorted = [...client.risks].sort((a,b) => (b.nivelRisco*b.impactoRisco) - (a.nivelRisco*a.impactoRisco));
+
+  sorted.forEach(risk => {
+    const score = (Number(risk.nivelRisco)||0) * (Number(risk.impactoRisco)||0);
+    const color = heatColor(score);
+    const card = document.createElement('div');
+    card.className = 'risk-card';
+    card.innerHTML = `
+      <div class="risk-heat" style="background:${color}"></div>
+      <div class="risk-body">
+        <div class="risk-row-top">
+          <input class="risk-title-input" value="${escapeHtml(risk.titulo)}" placeholder="Nome do risco" data-field="titulo"/>
+          <div class="risk-score-wrap">
+            <span class="risk-score-label">Avaliação do Risco</span>
+            <span class="risk-score" style="background:${color}22;color:${color}">${score}</span>
+          </div>
+        </div>
+        <div class="risk-grid">
+          <div class="risk-field"><label>Tipo de risco <span class="char-counter" data-counter="tipoRisco">${(risk.tipoRisco||'').length}/50</span></label><input maxlength="50" value="${escapeHtml(risk.tipoRisco)}" data-field="tipoRisco"/></div>
+          <div class="risk-field"><label>Perigos imediatos <span class="char-counter" data-counter="perigos">${(risk.perigos||'').length}/50</span></label><input maxlength="50" value="${escapeHtml(risk.perigos)}" data-field="perigos"/></div>
+          <div class="risk-field risk-grid-full"><label>Descrição <span class="char-counter" data-counter="descricao">${(risk.descricao||'').length}/200</span></label><textarea rows="2" maxlength="200" data-field="descricao">${escapeHtml(risk.descricao)}</textarea></div>
+          <div class="risk-grid-full risk-sliders">
+            <div class="risk-slider">
+              <label class="risk-slider-label">Probabilidade de Risco (1–10) <span class="risk-slider-value" data-role="nrval">${risk.nivelRisco}</span></label>
+              <input type="range" min="1" max="10" value="${risk.nivelRisco}" data-field="nivelRisco" style="width:100%"/>
+            </div>
+            <div class="risk-slider">
+              <label class="risk-slider-label">Impacto do risco (1–10) <span class="risk-slider-value" data-role="irval">${risk.impactoRisco}</span></label>
+              <input type="range" min="1" max="10" value="${risk.impactoRisco}" data-field="impactoRisco" style="width:100%"/>
+            </div>
+          </div>
+          <div class="risk-field"><label>Mitigação do risco <span class="char-counter" data-counter="mitigacao">${bulletsToText(risk.mitigacao).length}/200</span></label><textarea rows="3" maxlength="200" data-field="mitigacao" placeholder="Uma ideia por linha...">${escapeHtml(bulletsToText(risk.mitigacao))}</textarea></div>
+          <div class="risk-field"><label>Plano de contingência <span class="char-counter" data-counter="planoContingencia">${bulletsToText(risk.planoContingencia).length}/200</span></label><textarea rows="3" maxlength="200" data-field="planoContingencia" placeholder="Uma ideia por linha...">${escapeHtml(bulletsToText(risk.planoContingencia))}</textarea></div>
+        </div>
+        <div class="risk-footer">
+          <div style="display:flex;gap:14px">
+            <div class="risk-field" style="min-width:170px"><label>Owner</label>
+              <select data-field="owner">
+                <option value="">— por definir —</option>
+                ${OWNER_OPTIONS.map(o => `<option value="${o}" ${risk.owner===o?'selected':''}>${o}</option>`).join('')}
+              </select>
+            </div>
+            <div class="risk-field" style="min-width:190px"><label>Data limite</label>
+              <select data-field="data">
+                ${riskYearOptions().map(y => `<option value="${y}" ${String(risk.data)===String(y)?'selected':''}>31/12/${y}</option>`).join('')}
+              </select>
+            </div>
+          </div>
+          <button class="btn-ghost" data-action="delete">Remover risco</button>
+        </div>
+      </div>
+    `;
+
+    card.querySelectorAll('[data-field]').forEach(el => {
+      const field = el.dataset.field;
+      const handler = () => {
+        if(field === 'mitigacao' || field === 'planoContingencia'){
+          risk[field] = textToBullets(el.value);
+        } else if(field === 'nivelRisco' || field === 'impactoRisco'){
+          risk[field] = Number(el.value);
+          card.querySelector('[data-role="nrval"]').textContent = risk.nivelRisco;
+          card.querySelector('[data-role="irval"]').textContent = risk.impactoRisco;
+          const s = risk.nivelRisco * risk.impactoRisco;
+          const c = heatColor(s);
+          card.querySelector('.risk-heat').style.background = c;
+          const scoreEl = card.querySelector('.risk-score');
+          scoreEl.textContent = s;
+          scoreEl.style.background = c + '22';
+          scoreEl.style.color = c;
+        } else {
+          risk[field] = el.value;
+        }
+        if(field === 'descricao' || field === 'mitigacao' || field === 'planoContingencia' || field === 'tipoRisco' || field === 'perigos'){
+          const counter = card.querySelector(`[data-counter="${field}"]`);
+          const max = (field === 'tipoRisco' || field === 'perigos') ? 50 : 200;
+          if(counter) counter.textContent = `${el.value.length}/${max}`;
+        }
+        save();
+      };
+      el.addEventListener('input', handler);
+      if(el.tagName === 'SELECT') el.addEventListener('change', handler);
+    });
+
+    card.querySelector('[data-action="delete"]').onclick = () => {
+      if(!confirm('Remover este risco?')) return;
+      client.risks = client.risks.filter(r => r.id !== risk.id);
+      save(); renderRiskList(client);
+    };
+
+    wrap.appendChild(card);
+  });
+
+  const addBtn = document.getElementById('add-risk-btn');
+  const notice = document.getElementById('risk-limit-notice');
+  const atLimit = client.risks.length >= MAX_RISKS;
+  if(addBtn) addBtn.style.display = atLimit ? 'none' : '';
+  if(notice) notice.style.display = atLimit ? '' : 'none';
+}
+
+const YEARLY_ROWS = [
+  { key:'comprasCin', label:'Compras (€)', type:'number' },
+  { key:'percCin', label:'% CIN', type:'percent' },
+  { key:'comprasConcorrencia', label:'Compras Concorrência (€)', type:'calculated' },
+  { key:'marcaConc1', label:'Marca Concorrência 1', type:'select' },
+  { key:'marcaConc2', label:'Marca Concorrência 2', type:'select' },
+  { key:'marcaConc3', label:'Marca Concorrência 3', type:'select' },
+  { key:'marcaConc4', label:'Marca Concorrência 4', type:'select' },
+  { key:'lojasQtd', label:'Lojas (qtd)', type:'number' },
+  { key:'colaboradoresQtd', label:'Colaboradores', type:'text' }
+];
+
+function recalcYearRow(row){
+  row.comprasConcorrencia = calcComprasConcorrencia(row.comprasCin, row.percCin);
+}
+
+function groupedDisplay(val, row){
+  if(val === null || val === undefined || val === '') return '';
+  const num = Number(val);
+  if(!Number.isFinite(num)) return '';
+  if(row.type === 'percent') return Math.round(num * 100).toLocaleString('pt-PT');
+  const hasDecimals = row.key === 'comprasCin';
+  return num.toLocaleString('pt-PT', hasDecimals ? { minimumFractionDigits: 2, maximumFractionDigits: 2 } : { maximumFractionDigits: 0 });
+}
+function rawDisplay(val, row){
+  if(val === null || val === undefined || val === '') return '';
+  if(row.type === 'percent') return String(Math.round(Number(val) * 100));
+  return String(val);
+}
+function parseGroupedNumber(str){
+  if(str === '') return null;
+  // aceita tanto "700000" / "1234.56" (a escrever) como "700.000,00" (formatado, ex.: colado)
+  const cleaned = String(str).trim();
+  let normalized;
+  if(/,\d{1,2}$/.test(cleaned) && cleaned.includes('.')){
+    normalized = cleaned.replace(/\./g, '').replace(',', '.');
+  } else {
+    normalized = cleaned.replace(/\s/g, '').replace(',', '.');
+  }
+  const n = Number(normalized);
+  return Number.isFinite(n) ? n : null;
+}
+
+function renderYearlyTable(client){
+  const table = document.getElementById('yearly-table');
+  const years = [...client.yearlyData].sort((a,b) => (b.ano ?? -Infinity) - (a.ano ?? -Infinity));
+  years.forEach(recalcYearRow);
+
+  let head = '<thead><tr><th>Últimos 4 anos</th>' +
+    years.map(y => `<th><input type="text" inputmode="numeric" class="year-header-input" placeholder="Ano" value="${y.ano ?? ''}" data-yid="${y.id}"/></th>`).join('') +
+    '</tr></thead>';
+  let body = '<tbody>';
+  YEARLY_ROWS.forEach(row => {
+    body += `<tr><td>${row.label}${row.type==='percent' ? ' (%)' : ''}</td>`;
+    years.forEach(y => {
+      if(row.type === 'calculated'){
+        const v = y[row.key];
+        const display = v === null || v === undefined ? '—' : fmtMoney(v);
+        body += `<td class="calc-cell" data-yid="${y.id}" title="Calculado: Compras − (Compras × %CIN)">${escapeHtml(display)}</td>`;
+      } else if(row.type === 'select'){
+        const current = y[row.key] || '';
+        const opts = ['<option value="">—</option>', ...CONCORRENCIA_BRANDS.map(b => `<option value="${b}" ${current===b?'selected':''}>${b}</option>`)].join('');
+        body += `<td><select data-yid="${y.id}" data-field="${row.key}" data-type="select">${opts}</select></td>`;
+      } else if(row.type === 'text'){
+        const val = y[row.key];
+        body += `<td><input type="text" value="${escapeHtml(val || '')}" data-yid="${y.id}" data-field="${row.key}" data-type="${row.type}"/></td>`;
+      } else {
+        const display = groupedDisplay(y[row.key], row);
+        body += `<td><input type="text" inputmode="decimal" class="grouped-number" value="${escapeHtml(display)}" data-yid="${y.id}" data-field="${row.key}" data-type="${row.type}"/></td>`;
+      }
+    });
+    body += '</tr>';
+  });
+  body += '</tbody>';
+  table.innerHTML = head + body;
+
+  table.querySelectorAll('.year-header-input').forEach(el => {
+    el.addEventListener('change', () => {
+      const row = client.yearlyData.find(y => y.id === el.dataset.yid);
+      const v = Number(el.value);
+      row.ano = Number.isFinite(v) && v > 0 ? v : row.ano;
+      save(); renderYearlyTable(client);
+    });
+  });
+
+  table.querySelectorAll('.grouped-number').forEach(el => {
+    const rowDef = YEARLY_ROWS.find(r => r.key === el.dataset.field);
+    el.addEventListener('focus', () => {
+      const row = client.yearlyData.find(y => y.id === el.dataset.yid);
+      el.value = rawDisplay(row[el.dataset.field], rowDef);
+    });
+    el.addEventListener('blur', () => {
+      const row = client.yearlyData.find(y => y.id === el.dataset.yid);
+      el.value = groupedDisplay(row[el.dataset.field], rowDef);
+    });
+  });
+
+  table.querySelectorAll('[data-field]').forEach(el => {
+    const handler = () => {
+      const field = el.dataset.field;
+      const type = el.dataset.type;
+      const row = client.yearlyData.find(y => y.id === el.dataset.yid);
+      let v = el.value;
+      if(type === 'select'){
+        row[field] = v;
+      } else if(v === ''){
+        row[field] = type === 'text' ? '' : null;
+      } else if(type === 'number'){
+        row[field] = parseGroupedNumber(v);
+      } else if(type === 'percent'){
+        const n = parseGroupedNumber(v);
+        row[field] = n === null ? null : n / 100;
+      } else {
+        row[field] = v;
+      }
+      save();
+      if(field === 'comprasCin' || field === 'percCin'){
+        recalcYearRow(row);
+        const calcCell = table.querySelector(`.calc-cell[data-yid="${row.id}"]`);
+        if(calcCell) calcCell.textContent = row.comprasConcorrencia === null ? '—' : fmtMoney(row.comprasConcorrencia);
+      }
+    };
+    el.addEventListener('input', handler);
+    if(el.tagName === 'SELECT') el.addEventListener('change', handler);
+  });
+}
+
+
+function renderAll(){
+  renderSidebar();
+  renderEditor();
+}
+
+document.getElementById('client-select').onchange = e => {
+  activeId = e.target.value;
+  renderAll();
+};
+
+document.getElementById('add-client-btn').onclick = () => {
+  const nome = prompt('Nome do novo cliente:');
+  if(!nome) return;
+  const client = { id: uid(), nome, numero:'', geografia:'', observacoes:'', risks:[],
+    yearlyData:[1,2,3,4].map(offset => {
+      const y = new Date().getFullYear() - offset;
+      return { id:uid(), ano:y, comprasCin:null, percCin:null, comprasConcorrencia:null, marcaConc1:'', marcaConc2:'', marcaConc3:'', marcaConc4:'', lojasQtd:null, colaboradoresQtd:'' };
+    }) };
+  state.clients.push(client);
+  activeId = client.id;
+  save(); renderAll();
+};
+
+document.getElementById('delete-client-btn').onclick = () => {
+  const client = getClient(activeId);
+  if(!client) return;
+  if(!confirm(`Eliminar definitivamente "${client.nome}"? Esta ação não pode ser desfeita.`)) return;
+  state.clients = state.clients.filter(c => c.id !== activeId);
+  activeId = state.clients[0]?.id || null;
+  save(); renderAll();
+};
+
+document.getElementById('generate-pdf-btn').onclick = () => {
+  const client = getClient(activeId);
+  if(!client) return;
+  buildPrintSheet(client);
+  window.print();
+};
+
+document.getElementById('export-excel-btn').onclick = () => {
+  if(typeof ExcelJS === 'undefined'){
+    alert('Não foi possível carregar a biblioteca de Excel (é preciso ligação à internet na primeira vez). Tenta novamente.');
+    return;
+  }
+  exportExcel();
+};
+
+function sanitizeSheetName(name, used){
+  let s = String(name || 'Cliente').replace(/[\\\/\?\*\[\]:]/g, ' ').replace(/\s+/g,' ').trim();
+  if(!s) s = 'Cliente';
+  s = s.slice(0, 31);
+  let base = s, i = 2;
+  while(used.has(s)){
+    const suffix = ` (${i})`;
+    s = base.slice(0, 31 - suffix.length) + suffix;
+    i++;
+  }
+  used.add(s);
+  return s;
+}
+
+const XL = {
+  navy:   { argb: 'FF1B2A5E' },
+  navySoft: { argb: 'FFE9ECF6' },
+  red:    { argb: 'FFD4202A' },
+  orange: { argb: 'FFE2711D' },
+  warn:   { argb: 'FFC8881A' },
+  ok:     { argb: 'FF1F9D6B' },
+  white:  { argb: 'FFFFFFFF' },
+  ink:    { argb: 'FF1C2230' },
+  line:   { argb: 'FFDDE2D8' },
+  zebra:  { argb: 'FFF6F8FD' }
+};
+const thinBorder = { style: 'thin', color: XL.line };
+const allBorders = { top: thinBorder, left: thinBorder, bottom: thinBorder, right: thinBorder };
+
+function xlScoreFill(score){
+  if(score > 45) return XL.red;
+  if(score > 35) return XL.orange;
+  if(score > 25) return XL.warn;
+  return XL.ok;
+}
+
+function xlTitleRow(ws, text, span){
+  const row = ws.addRow([text]);
+  ws.mergeCells(row.number, 1, row.number, span);
+  row.height = 26;
+  row.getCell(1).font = { bold: true, size: 14, color: XL.white };
+  row.getCell(1).fill = { type: 'pattern', pattern: 'solid', fgColor: XL.navy };
+  row.getCell(1).alignment = { vertical: 'middle', horizontal: 'left', indent: 1 };
+  for(let c = 1; c <= span; c++){ row.getCell(c).fill = { type: 'pattern', pattern: 'solid', fgColor: XL.navy }; }
+}
+
+function xlSectionRow(ws, text, span){
+  const row = ws.addRow([text]);
+  ws.mergeCells(row.number, 1, row.number, span);
+  row.height = 20;
+  row.getCell(1).font = { bold: true, size: 11, color: XL.navy };
+  row.getCell(1).alignment = { vertical: 'middle', horizontal: 'left', indent: 1 };
+  for(let c = 1; c <= span; c++){ row.getCell(c).fill = { type: 'pattern', pattern: 'solid', fgColor: XL.navySoft }; }
+}
+
+function xlHeaderRow(ws, values){
+  const row = ws.addRow(values);
+  row.height = 20;
+  row.eachCell(cell => {
+    cell.font = { bold: true, size: 10, color: XL.white };
+    cell.fill = { type: 'pattern', pattern: 'solid', fgColor: XL.navy };
+    cell.alignment = { vertical: 'middle', horizontal: 'left', wrapText: true };
+    cell.border = allBorders;
+  });
+  return row;
+}
+
+function buildClientSheet(wb, client){
+  const ws = wb.addWorksheet(sanitizeSheetName(client.nome, wb.__usedNames));
+  ws.columns = [
+    { width: 24 }, { width: 16 }, { width: 18 }, { width: 42 },
+    { width: 11 }, { width: 11 }, { width: 12 },
+    { width: 34 }, { width: 34 }, { width: 18 }, { width: 20 }
+  ];
+
+  xlTitleRow(ws, `MATRIZ DE RISCO · ${client.nome}`, 11);
+  ws.addRow([]);
+
+  const infoLabels = ['Cliente', 'Número', 'Geografia (sede)'];
+  const infoValues = [client.nome, client.numero || '—', client.geografia || '—'];
+  infoLabels.forEach((label, i) => {
+    const row = ws.addRow([label, infoValues[i]]);
+    row.getCell(1).font = { bold: true, color: XL.ink };
+    row.getCell(2).font = { color: XL.ink };
+  });
+  ws.addRow([]);
+
+  xlSectionRow(ws, 'MATRIZ DE RISCO', 11);
+  xlHeaderRow(ws, ['Risco','Tipo de risco','Perigos imediatos','Descrição','Prob.','IR','Avaliação','Mitigação','Plano de Contingência','Owner','Data limite']);
+
+  const sortedRisks = [...client.risks].sort((a,b) => (b.nivelRisco*b.impactoRisco) - (a.nivelRisco*a.impactoRisco));
+  sortedRisks.forEach((r, idx) => {
+    const score = (Number(r.nivelRisco)||0) * (Number(r.impactoRisco)||0);
+    const row = ws.addRow([
+      r.titulo || '', r.tipoRisco || '', r.perigos || '', r.descricao || '',
+      r.nivelRisco, r.impactoRisco, score,
+      (r.mitigacao || []).join('\n'),
+      (r.planoContingencia || []).join('\n'),
+      r.owner || '—', formatRiskDate(r.data)
+    ]);
+    row.eachCell((cell, col) => {
+      cell.border = allBorders;
+      cell.alignment = { vertical: 'top', wrapText: true };
+      if(!(idx % 2)) cell.fill = { type: 'pattern', pattern: 'solid', fgColor: XL.zebra };
+    });
+    const scoreCell = row.getCell(7);
+    scoreCell.fill = { type: 'pattern', pattern: 'solid', fgColor: xlScoreFill(score) };
+    scoreCell.font = { bold: true, color: XL.white };
+    scoreCell.alignment = { vertical: 'middle', horizontal: 'center' };
+    row.getCell(1).font = { bold: true, color: XL.ink };
+  });
+  if(sortedRisks.length === 0){
+    const row = ws.addRow(['Sem riscos registados.']);
+    ws.mergeCells(row.number, 1, row.number, 11);
+    row.getCell(1).font = { italic: true, color: XL.ink };
+  }
+  ws.addRow([]);
+
+  xlSectionRow(ws, 'COMPRAS · MARCAS · LOJAS · COLABORADORES', 11);
+  const years = [...client.yearlyData].sort((a,b) => (b.ano ?? -Infinity) - (a.ano ?? -Infinity));
+  years.forEach(recalcYearRow);
+  xlHeaderRow(ws, ['Indicador', ...years.map(y => y.ano ?? '—')]);
+  YEARLY_ROWS.forEach((row, idx) => {
+    const values = [row.label + (row.type === 'percent' ? ' (%)' : '')];
+    years.forEach(y => {
+      const v = y[row.key];
+      if(v === null || v === undefined || v === ''){ values.push(''); }
+      else if(row.type === 'percent'){ values.push(Math.round(v*100)); }
+      else if(row.type === 'calculated'){ values.push(v === null ? '' : Math.round(v * 100) / 100); }
+      else { values.push(v); }
+    });
+    const xlRow = ws.addRow(values);
+    xlRow.eachCell(cell => {
+      cell.border = allBorders;
+      if(!(idx % 2)) cell.fill = { type: 'pattern', pattern: 'solid', fgColor: XL.zebra };
+    });
+    xlRow.getCell(1).font = { bold: true, color: XL.ink };
+  });
+  ws.addRow([]);
+
+  xlSectionRow(ws, 'OBSERVAÇÕES', 11);
+  const obsRow = ws.addRow([client.observacoes || '—']);
+  ws.mergeCells(obsRow.number, 1, obsRow.number, 11);
+  obsRow.height = 40;
+  obsRow.getCell(1).alignment = { vertical: 'top', horizontal: 'left', wrapText: true };
+  obsRow.getCell(1).border = allBorders;
+
+  ws.views = [{ state: 'frozen', ySplit: 8 }];
+}
+
+// ============================================================
+// IMPORTAÇÃO DE EXCEL (pré-preenchimento)
+// ============================================================
+
+function cellText(cell){
+  if(!cell) return '';
+  let v = cell.value;
+  if(v === null || v === undefined) return '';
+  if(typeof v === 'object'){
+    if(Array.isArray(v.richText)) return v.richText.map(t => t.text).join('');
+    if(v.result !== undefined) return String(v.result);
+    if(v.text !== undefined) return String(v.text);
+    if(v instanceof Date) return '';
+    return '';
+  }
+  return String(v).trim();
+}
+function cellNum(cell){
+  const t = cellText(cell);
+  if(t === '') return null;
+  const n = Number(String(t).replace(',', '.'));
+  return Number.isFinite(n) ? n : null;
+}
+function normText(s){ return String(s || '').toLowerCase().trim(); }
+
+function matchBrands(text, max){
+  if(!text) return [];
+  const tokens = String(text).split(/[\/,;]+/).map(t => t.trim()).filter(Boolean);
+  const found = [];
+  tokens.forEach(tok => {
+    const low = tok.toLowerCase();
+    const brand = CONCORRENCIA_BRANDS.find(b => low.includes(b.toLowerCase()));
+    if(brand && !found.includes(brand)) found.push(brand);
+  });
+  return found.slice(0, max || 4);
+}
+
+function isOwnFormatSheet(ws){
+  return normText(cellText(ws.getRow(1).getCell(1))).includes('matriz de risco');
+}
+
+function findRowIndex(ws, predicate, maxRow){
+  const limit = Math.min(maxRow || 60, ws.rowCount || 60);
+  for(let r = 1; r <= limit; r++){
+    const row = ws.getRow(r);
+    if(predicate(row, r)) return r;
+  }
+  return -1;
+}
+
+// --- Formato próprio (round-trip do que esta ferramenta exporta) -----------
+
+function parseOwnFormatSheet(ws){
+  let nome = '', numero = '', geografia = '', observacoes = '';
+
+  const maxScan = Math.min(ws.rowCount || 20, 20);
+  for(let r = 1; r <= maxScan; r++){
+    const row = ws.getRow(r);
+    const label = normText(cellText(row.getCell(1)));
+    if(label === 'cliente') nome = cellText(row.getCell(2));
+    else if(label === 'número' || label === 'numero') numero = cellText(row.getCell(2));
+    else if(label.includes('geografia')) geografia = cellText(row.getCell(2));
+  }
+
+  // --- Riscos ---
+  const riskHeaderRow = findRowIndex(ws, row => {
+    const c1 = normText(cellText(row.getCell(1)));
+    if(c1 !== 'risco') return false;
+    for(let c = 2; c <= 11; c++){ if(normText(cellText(row.getCell(c))).includes('descri')) return true; }
+    return false;
+  });
+
+  const risks = [];
+  if(riskHeaderRow > -1){
+    const header = ws.getRow(riskHeaderRow);
+    const colMap = {};
+    for(let c = 1; c <= 11; c++){
+      const t = normText(cellText(header.getCell(c)));
+      if(t === 'risco') colMap.titulo = c;
+      else if(t.includes('tipo')) colMap.tipoRisco = c;
+      else if(t.includes('perigo')) colMap.perigos = c;
+      else if(t.includes('descri')) colMap.descricao = c;
+      else if(t.includes('prob')) colMap.nivelRisco = c;
+      else if(t === 'ir') colMap.impactoRisco = c;
+      else if(t.includes('mitiga')) colMap.mitigacao = c;
+      else if(t.includes('conting')) colMap.planoContingencia = c;
+      else if(t.includes('owner')) colMap.owner = c;
+      else if(t.includes('data')) colMap.data = c;
+    }
+    for(let r = riskHeaderRow + 1; r <= riskHeaderRow + 12 && risks.length < MAX_RISKS; r++){
+      const row = ws.getRow(r);
+      const titulo = cellText(row.getCell(colMap.titulo || 1));
+      if(!titulo) break;
+      if(normText(titulo) === 'sem riscos registados.') break;
+      const dataRaw = cellText(row.getCell(colMap.data));
+      const dataMatch = dataRaw.match(/(\d{4})/);
+      risks.push({
+        id: uid(),
+        titulo,
+        tipoRisco: cellText(row.getCell(colMap.tipoRisco)),
+        perigos: cellText(row.getCell(colMap.perigos)),
+        descricao: cellText(row.getCell(colMap.descricao)),
+        nivelRisco: cellNum(row.getCell(colMap.nivelRisco)) || 1,
+        impactoRisco: cellNum(row.getCell(colMap.impactoRisco)) || 1,
+        mitigacao: textToBullets(cellText(row.getCell(colMap.mitigacao))),
+        planoContingencia: textToBullets(cellText(row.getCell(colMap.planoContingencia))),
+        owner: cellText(row.getCell(colMap.owner)),
+        data: dataMatch ? dataMatch[1] : ''
+      });
+    }
+  }
+
+  // --- Dados anuais ---
+  const yearlyHeaderRow = findRowIndex(ws, row => normText(cellText(row.getCell(1))) === 'indicador');
+  const yearlyData = [];
+  if(yearlyHeaderRow > -1){
+    const header = ws.getRow(yearlyHeaderRow);
+    const yearCols = [];
+    for(let c = 2; c <= 6; c++){
+      const t = cellText(header.getCell(c));
+      const y = Number(t);
+      if(t !== '' && Number.isFinite(y)) yearCols.push({ col: c, ano: y });
+      else if(t !== '') yearCols.push({ col: c, ano: null });
+    }
+    yearCols.forEach(yc => {
+      yearlyData.push({
+        id: uid(), ano: yc.ano,
+        comprasCin: cellNum(ws.getRow(yearlyHeaderRow + 1).getCell(yc.col)),
+        percCin: (() => { const v = cellNum(ws.getRow(yearlyHeaderRow + 2).getCell(yc.col)); return v === null ? null : v / 100; })(),
+        comprasConcorrencia: null,
+        marcaConc1: cellText(ws.getRow(yearlyHeaderRow + 4).getCell(yc.col)),
+        marcaConc2: cellText(ws.getRow(yearlyHeaderRow + 5).getCell(yc.col)),
+        marcaConc3: cellText(ws.getRow(yearlyHeaderRow + 6).getCell(yc.col)),
+        marcaConc4: cellText(ws.getRow(yearlyHeaderRow + 7).getCell(yc.col)),
+        lojasQtd: cellNum(ws.getRow(yearlyHeaderRow + 8).getCell(yc.col)),
+        colaboradoresQtd: cellText(ws.getRow(yearlyHeaderRow + 9).getCell(yc.col))
+      });
+    });
+  }
+  while(yearlyData.length < 4){
+    const offset = yearlyData.length + 1;
+    yearlyData.push({ id: uid(), ano: new Date().getFullYear() - offset, comprasCin: null, percCin: null, comprasConcorrencia: null, marcaConc1: '', marcaConc2: '', marcaConc3: '', marcaConc4: '', lojasQtd: null, colaboradoresQtd: '' });
+  }
+
+  // --- Observações ---
+  const obsHeaderRow = findRowIndex(ws, row => normText(cellText(row.getCell(1))) === 'observações' || normText(cellText(row.getCell(1))) === 'observacoes');
+  if(obsHeaderRow > -1) observacoes = cellText(ws.getRow(obsHeaderRow + 1).getCell(1));
+
+  if(!nome) return null;
+  return { nome, numero, geografia, observacoes, risks, yearlyData };
+}
+
+// --- Formato original (template CIN, uma folha por cliente) ----------------
+
+function parseOriginalFormatSheet(ws){
+  let nome = cellText(ws.getRow(3).getCell(2));
+  let numero = '', geografia = '';
+
+  const maxScan = Math.min(ws.rowCount || 6, 6);
+  for(let r = 1; r <= maxScan; r++){
+    const row = ws.getRow(r);
+    for(let c = 1; c <= 10; c++){
+      const t = normText(cellText(row.getCell(c)));
+      if(t.length > 30) continue; // ignora frases longas (ex.: texto de riscos), só interessam rótulos curtos
+      if(t.includes('número') || t.includes('numero')) numero = cellText(row.getCell(c + 1));
+      else if(t.startsWith('geograf') || t.startsWith('geogrf')) geografia = cellText(row.getCell(c + 1));
+    }
+  }
+  if(!nome) nome = ws.name;
+
+  // --- Riscos ---
+  const riskHeaderRow = findRowIndex(ws, row => {
+    let hasRisco = false, hasDescricao = false;
+    for(let c = 1; c <= 14; c++){
+      const t = normText(cellText(row.getCell(c)));
+      if(t === 'risco') hasRisco = true;
+      if(t.includes('descri')) hasDescricao = true;
+    }
+    return hasRisco && hasDescricao;
+  });
+
+  const risks = [];
+  if(riskHeaderRow > -1){
+    const header = ws.getRow(riskHeaderRow);
+    const colMap = {};
+    for(let c = 1; c <= 14; c++){
+      const t = normText(cellText(header.getCell(c)));
+      if(t === 'risco') colMap.titulo = c;
+      else if(t.includes('tipo')) colMap.tipoRisco = c;
+      else if(t.includes('perigo')) colMap.perigos = c;
+      else if(t.includes('descri')) colMap.descricao = c;
+      else if(t.includes('nível') || t.includes('nivel') || t.includes('probabilidade')) colMap.nivelRisco = c;
+      else if(t.includes('impacto')) colMap.impactoRisco = c;
+      else if(t.includes('mitiga')) colMap.mitigacao = c;
+      else if(t.includes('conting')) colMap.planoContingencia = c;
+      else if(t.includes('owner')) colMap.owner = c;
+      else if(t === 'data') colMap.data = c;
+    }
+    let lastSignature = '';
+    for(let r = riskHeaderRow + 1; r <= riskHeaderRow + 16 && risks.length < MAX_RISKS; r++){
+      const row = ws.getRow(r);
+      const nr = cellNum(row.getCell(colMap.nivelRisco));
+      const ir = cellNum(row.getCell(colMap.impactoRisco));
+      if(nr === null || ir === null) continue;
+      const descricao = cellText(row.getCell(colMap.descricao));
+      const signature = descricao + '|' + nr + '|' + ir;
+      if(signature === lastSignature) continue; // linha "eco" de uma célula fundida verticalmente
+      lastSignature = signature;
+      let titulo = cellText(row.getCell(colMap.titulo));
+      if(!titulo || /^risco\s*\(qual/i.test(titulo)) titulo = cellText(row.getCell(colMap.tipoRisco)) || 'Risco';
+      risks.push({
+        id: uid(),
+        titulo,
+        tipoRisco: cellText(row.getCell(colMap.tipoRisco)),
+        perigos: cellText(row.getCell(colMap.perigos)),
+        descricao,
+        nivelRisco: nr, impactoRisco: ir,
+        mitigacao: textToBullets(cellText(row.getCell(colMap.mitigacao))),
+        planoContingencia: textToBullets(cellText(row.getCell(colMap.planoContingencia))),
+        owner: cellText(row.getCell(colMap.owner)),
+        data: cellText(row.getCell(colMap.data))
+      });
+    }
+  }
+
+  // --- Dados anuais ---
+  const comprasHeaderRow = findRowIndex(ws, row => {
+    for(let c = 1; c <= 12; c++){ if(normText(cellText(row.getCell(c))) === 'compras') return true; }
+    return false;
+  });
+
+  const yearlyData = [];
+  if(comprasHeaderRow > -1){
+    for(let r = comprasHeaderRow + 1; r <= comprasHeaderRow + 8 && yearlyData.length < 4; r++){
+      const row = ws.getRow(r);
+      let yearCol = -1, ano = null;
+      for(let c = 1; c <= 6; c++){
+        const n = cellNum(row.getCell(c));
+        if(n !== null && n >= 1990 && n <= 2100){ yearCol = c; ano = n; break; }
+      }
+      if(yearCol === -1) continue;
+      const comprasTotal = cellNum(row.getCell(yearCol + 1));
+      const marcasText = cellText(row.getCell(yearCol + 2));
+      const percCin = cellNum(row.getCell(yearCol + 4));
+      const lojasQtd = cellNum(row.getCell(yearCol + 5));
+      const colaboradoresQtd = cellText(row.getCell(yearCol + 7));
+      const brands = matchBrands(marcasText, 4);
+      yearlyData.push({
+        id: uid(), ano,
+        comprasCin: comprasTotal,
+        percCin,
+        comprasConcorrencia: null,
+        marcaConc1: brands[0] || '', marcaConc2: brands[1] || '', marcaConc3: brands[2] || '', marcaConc4: brands[3] || '',
+        lojasQtd, colaboradoresQtd
+      });
+    }
+  }
+  while(yearlyData.length < 4){
+    const offset = yearlyData.length + 1;
+    yearlyData.push({ id: uid(), ano: new Date().getFullYear() - offset, comprasCin: null, percCin: null, comprasConcorrencia: null, marcaConc1: '', marcaConc2: '', marcaConc3: '', marcaConc4: '', lojasQtd: null, colaboradoresQtd: '' });
+  }
+
+  // --- Observações ---
+  let observacoes = '';
+  const obsRow = findRowIndex(ws, row => {
+    for(let c = 1; c <= 12; c++){ if(normText(cellText(row.getCell(c))).includes('observa')) return true; }
+    return false;
+  });
+  if(obsRow > -1){
+    const row = ws.getRow(obsRow);
+    for(let c = 1; c <= 12; c++){
+      if(normText(cellText(row.getCell(c))).includes('observa')){
+        for(let c2 = c + 1; c2 <= 14; c2++){
+          const t = cellText(row.getCell(c2));
+          if(t){ observacoes = t; break; }
+        }
+        break;
+      }
+    }
+    if(!observacoes) observacoes = cellText(ws.getRow(obsRow + 1).getCell(1));
+  }
+
+  if(!nome) return null;
+  return { nome, numero, geografia, observacoes, risks, yearlyData };
+}
+
+async function handleExcelImport(file){
+  if(typeof ExcelJS === 'undefined'){
+    alert('Não foi possível carregar a biblioteca de Excel (é preciso ligação à internet na primeira vez). Tenta novamente.');
+    return;
+  }
+  try {
+    const buffer = await file.arrayBuffer();
+    const wb = new ExcelJS.Workbook();
+    await wb.xlsx.load(buffer);
+
+    let imported = 0, skipped = 0;
+    wb.worksheets.forEach(ws => {
+      if(normText(ws.name).includes('exemplo')) return;
+      let parsed = null;
+      try {
+        parsed = isOwnFormatSheet(ws) ? parseOwnFormatSheet(ws) : parseOriginalFormatSheet(ws);
+      } catch(e){ console.error('Erro ao importar a folha', ws.name, e); }
+      if(parsed && parsed.nome){
+        state.clients.push({ id: uid(), ...parsed });
+        imported++;
+      } else {
+        skipped++;
+      }
+    });
+
+    if(imported > 0){
+      save();
+      activeId = state.clients[state.clients.length - imported].id;
+      renderAll();
+    }
+    alert(`Importação concluída: ${imported} cliente(s) importado(s).${skipped ? ` ${skipped} folha(s) não reconhecida(s) foram ignoradas.` : ''}\n\nRevê sempre os dados importados — a leitura automática pode não ser perfeita.`);
+  } catch(e){
+    alert('Não foi possível importar este ficheiro: ' + e.message);
+  }
+}
+
+document.getElementById('import-excel-btn').onclick = () => document.getElementById('import-excel-input').click();
+document.getElementById('import-excel-input').onchange = e => {
+  const file = e.target.files[0];
+  if(!file) return;
+  handleExcelImport(file);
+  e.target.value = '';
+};
+
+async function exportExcel(){
+  const wb = new ExcelJS.Workbook();
+  wb.creator = 'CIN · Gestão Comercial';
+  wb.created = new Date();
+  wb.__usedNames = new Set();
+
+  state.clients.forEach(client => buildClientSheet(wb, client));
+
+  const buffer = await wb.xlsx.writeBuffer();
+  const blob = new Blob([buffer], { type: 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet' });
+  const url = URL.createObjectURL(blob);
+  const today = new Date().toISOString().slice(0,10);
+  const a = document.createElement('a');
+  a.href = url;
+  a.download = `matriz-risco-clientes-${today}.xlsx`;
+  document.body.appendChild(a);
+  a.click();
+  a.remove();
+  URL.revokeObjectURL(url);
+}
+
+function buildPrintSheet(client){
+  const years = [...client.yearlyData].sort((a,b) => (b.ano ?? -Infinity) - (a.ano ?? -Infinity));
+  years.forEach(recalcYearRow);
+  const sortedRisks = [...client.risks].sort((a,b) => (b.nivelRisco*b.impactoRisco) - (a.nivelRisco*a.impactoRisco));
+
+  let risksHtml = `<table class="ps-table"><thead><tr>
+    <th style="width:10%">Risco</th><th style="width:8%">Tipo</th><th style="width:8%">Perigos</th>
+    <th style="width:12%">Descrição</th><th style="width:5%">Prob.</th><th style="width:5%">IR</th><th style="width:6%">Avaliação</th>
+    <th style="width:15%">Mitigação</th><th style="width:15%">Contingência</th><th style="width:8%">Owner</th><th style="width:8%">Data</th>
+  </tr></thead><tbody>`;
+
+  sortedRisks.forEach(r => {
+    const score = (Number(r.nivelRisco)||0) * (Number(r.impactoRisco)||0);
+    const dateDisplay = formatRiskDate(r.data);
+    const color = heatColor(score);
+    risksHtml += `<tr>
+      <td>${escapeHtml(r.titulo)}</td>
+      <td>${escapeHtml(r.tipoRisco)}</td>
+      <td>${escapeHtml(r.perigos)}</td>
+      <td>${escapeHtml(r.descricao)}</td>
+      <td class="ps-score">${r.nivelRisco}</td>
+      <td class="ps-score">${r.impactoRisco}</td>
+      <td class="ps-score" style="background:${color};color:#fff">${score}</td>
+      <td>${(r.mitigacao||[]).map(escapeHtml).join('<br>')}</td>
+      <td>${(r.planoContingencia||[]).map(escapeHtml).join('<br>')}</td>
+      <td>${escapeHtml(r.owner) || '—'}</td>
+      <td>${escapeHtml(dateDisplay)}</td>
+    </tr>`;
+  });
+  risksHtml += '</tbody></table>';
+
+  let yearlyHtml = '<table class="ps-table"><thead><tr><th style="width:22%">Indicador</th>' + years.map(y => `<th>${y.ano ?? '—'}</th>`).join('') + '</tr></thead><tbody>';
+  YEARLY_ROWS.forEach(row => {
+    yearlyHtml += `<tr><td>${row.label}${row.type==='percent'?' (%)':''}</td>`;
+    years.forEach(y => {
+      let v = y[row.key];
+      let display = '—';
+      if(v !== null && v !== undefined && v !== ''){
+        if(row.type === 'percent') display = fmtPercent(v);
+        else if(row.key === 'comprasCin' || row.type === 'calculated') display = fmtMoney(v);
+        else display = v;
+      }
+      yearlyHtml += `<td>${escapeHtml(display)}</td>`;
+    });
+    yearlyHtml += '</tr>';
+  });
+  yearlyHtml += '</tbody></table>';
+
+  const today = new Date().toLocaleDateString('pt-PT');
+
+  document.getElementById('print-sheet').innerHTML = `
+    <div class="ps-header">
+      <div>
+        <div class="ps-logo"><img class="ps-logo-img" src="${CIN_LOGO}" alt="CIN"/><span class="ps-brand">Gestão Comercial</span></div>
+        <div class="ps-title">${escapeHtml(client.nome)}</div>
+      </div>
+      <div class="ps-meta">
+        Cliente nº ${escapeHtml(client.numero||'—')}<br>
+        ${escapeHtml(client.geografia||'—')}<br>
+        Gerado em ${today}
+      </div>
+    </div>
+
+    <div class="ps-section">Matriz de risco</div>
+    ${risksHtml}
+
+    <div class="ps-section">Compras · Marcas · Lojas · Colaboradores (últimos 4 anos)</div>
+    ${yearlyHtml}
+
+    <div class="ps-section">Observações</div>
+    <div class="ps-obs">${escapeHtml(client.observacoes) || '—'}</div>
+
+    <div class="ps-footer">Matriz de Risco de Cliente · CIN</div>
+  `;
+}
+
+document.getElementById('topbar-logo').src = CIN_LOGO;
+
+renderAll();
+</script>
+</body>
+</html>
